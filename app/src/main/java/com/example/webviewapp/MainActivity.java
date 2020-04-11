@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        WebView myWebView = findViewById(R.id.my_webview);
+        myWebView.getSettings().setJavaScriptEnabled(true);
+        myWebView.loadUrl("https://www.his.se/");
 
         /*
         * Rename your App. Tip: Values->Strings
