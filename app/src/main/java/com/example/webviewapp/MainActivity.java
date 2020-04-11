@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -17,10 +18,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void showExternalWebPage(){
         // TODO: Add your code for showing external web page here
+        WebView myWebView = findViewById(R.id.my_webview);
+        myWebView.getSettings().setJavaScriptEnabled(true);
+        myWebView.loadUrl("https://www.twitch.tv/");
     }
 
     public void showInternalWebPage(){
         // TODO: Add your code for showing internal web page here
+        WebView myWebView = findViewById(R.id.my_webview);
+        myWebView.getSettings().setJavaScriptEnabled(true);
+        myWebView.setWebViewClient(new WebViewClient()); // Page will not open in system browser
+        myWebView.loadUrl("https://www.twitch.tv/");
     }
 
     @Override
@@ -29,10 +37,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        WebView myWebView = findViewById(R.id.my_webview);
-        myWebView.getSettings().setJavaScriptEnabled(true);
-        myWebView.loadUrl("https://www.his.se/");
 
         /*
         * Rename your App. Tip: Values->Strings
@@ -48,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         * Enable Javascript execution in your WebViewClient
         * Enter the url to load in our WebView
         -- Commit and push to your github fork
+
         * Move the code that loads a URL into your WebView into the two methods
           "showExternalWebPage()" and "showInternalWebPage()".
         * Call the "showExternalWebPage()" / "showInternalWebPage()" methods
@@ -86,11 +91,13 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_external_web) {
             Log.d("==>","Will display external web page");
+            showExternalWebPage();
             return true;
         }
 
         if (id == R.id.action_internal_web) {
             Log.d("==>","Will display internal web page");
+            showInternalWebPage();
             return true;
         }
 
