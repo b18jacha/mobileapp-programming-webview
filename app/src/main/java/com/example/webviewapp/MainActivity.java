@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         // TODO: Add your code for showing external web page here
         WebView myWebView = findViewById(R.id.my_webview);
         myWebView.getSettings().setJavaScriptEnabled(true);
+        myWebView.setWebViewClient(new WebViewClient()); // Page will not open in system browser
         myWebView.loadUrl("https://www.twitch.tv/");
     }
 
@@ -27,8 +28,7 @@ public class MainActivity extends AppCompatActivity {
         // TODO: Add your code for showing internal web page here
         WebView myWebView = findViewById(R.id.my_webview);
         myWebView.getSettings().setJavaScriptEnabled(true);
-        myWebView.setWebViewClient(new WebViewClient()); // Page will not open in system browser
-        myWebView.loadUrl("https://www.twitch.tv/");
+        myWebView.loadUrl("file:///android_asset/home.html");
     }
 
     @Override

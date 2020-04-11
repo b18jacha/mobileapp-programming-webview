@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>A SPA Template</title>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script>
+        // Help function that shows page p and hides all other pages
+        function showPage(p) {
+            // Step 1 - Hide all pages
+            pageArr = document.getElementsByClassName("page");
+            for (let i = 0; i < pageArr.length; i++) {
+                let page = pageArr[i];
+                page.style.display = "none";
+            }
+            // Step 2 - Show the selected page
+            document.getElementById("page" + p).style.display = "block";
+        }
+    </script>
+    <style>
+        .button {
+            background-color: #FED;
+            color: #000;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        /* Små enheter */
+        @media (max-width: 767.98px) {
+            #StrindbergCarousel {
+                max-width: 100%;
+            }
+        }
+        /* Större enheter */
+        @media (min-width: 768px) {
+            #StrindbergCarousel {
+                max-width: 390px;
+                margin: auto;
+            }
+        }
+    </style>
+</head>
+
+<body onload="showPage(1);">
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a href="#" class="navbar-brand" onclick="showPage(1);">August Strindberg</a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="showPage(2);">Betygsätt Strindberg</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="showPage(3);">Galleri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="showPage(4);">"Mäster Olof"</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="showPage(5);">"Hemsöborna. Skärkarlsliv"</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="showPage(6);">"Tjänstekvinnans son"</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="showPage(7);">"En dåres försvarstal"</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="showPage(8);">"Röda rummet"</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="showPage(9);">Om StrindbergAppen</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div id="page1" class="page">
+                <h1>August Strindberg</h1>
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#rndInfo">Strindberg Quiz</button>
+
+                <div class="modal fade" id="rndInfo">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title">Visste du att</h3>
+                            </div>
+                            <div class="modal-body">
+                                <p>Under åttiotalet vistades August Strindberg flera år i utlandet, främst i Schweiz och Frankrike?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Nej!</button>
+                                <button type="button" class="btn btn-success" data-dismiss="modal">Ja!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <p>
+                    Johan August Strindberg föddes i Sundhetskollegiets hus på Riddarholmen i
+                    Stockholm den 22 januari 1849. Strindberg var det tredje barnet av åtta i sin
+                    faders första äktenskap. Efter det rivna födelsehuset har Strindberg döpt
+                    pjäsen Brända Tomten. År 1851 flyttade familjen till Klarakvarteren och 1856
+                    till Norrtullsgatan 14.
+                </p>
+                <blockquote class="blockquote">
+                    <p class="mb-0">Men solen stod över Liljeholmen och sköt hela kvastar av strålar mot öster...</p>
+                    <footer class="blockquote-footer">August Strindberg från <cite title="Source Title">Stockholm i fågelperspektiv</cite><button type="button" class="btn btn-link" onclick="showPage(8);">"Röda rummet"</button></footer>
+                </blockquote>
+                <p>
+                    Strindbergs far Carl Oscar Strindberg var ångbåtskommissionär och ansvarig för
+                    godstrafiken på Mälaren och Göta kanal. Modern Eleonora Ulrika Norling var före
+                    detta värdshusflicka, som hade arbetat på Liljeholmens värdshus. Före
+                    giftermålet arbetade hon som hushållerska åt Carl Oscar, därav titeln
+                    Tjänstekvinnans son, men hemmet var inte så proletärt som Strindberg ville få
+                    det att framstå. Carl Oscar gifte sig med henne 1847. Hennes fromhet hade stark
+                    påverkan på författaren. Strindbergs faster Lisette Strindberg var gift med
+                    ångbåtspionjären Samuel Owen.
+
+                    <br><br>Som barn var Strindberg lugn och tystlåten. Fadern var sträng och Strindberg
+                    växte upp i ett hem som präglades av disciplin, gudfruktighet och kulturellt
+                    intresse. Under barndomen ägnade han sig åt läsning, naturvetenskapliga studier
+                    och blomsterodling. År 1856 började han på Klara skola. Den 30 december 1861
+                    skrev Strindberg ett brev om vännen Flodcrantz som gick igenom isen på
+                    Brunnsviken och drunknade. Natten mellan 19 och 20 mars 1862 avled modern och
+                    Strindberg skrev ett brev om det till sin bror Oscar den 22 mars. Strindberg
+                    hade ett dåligt förhållande till sin fader, vilket försämrades ytterligare
+                    efter moderns död. Året efter gifte fadern om sig med den trettio år yngre
+                    Emilia Charlotta Peterson som var familjens tjugotvååriga husmamsell
+                    (hushållerska) och som Strindberg kom att avsky. I efterhand har dock bilden
+                    av Emilia ändrats. Hon fyllde väl rollen som styvmamma framförallt för Augusts
+                    systrar.
+                </p>
+
+                <div id="StrindbergCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="Portrait_of_Strindberg3x4.jpg" alt="Slide av Strindberg">
+                            <div class="carousel-caption">
+                                <p><a href="https://commons.wikimedia.org/wiki/File:Portrait_of_August_Strindberg_by_Richard_Bergh_1905.jpg">Portrait of August Strindberg</a> av Richard Bergh / <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.sv">CC-0</a></p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="Portrait_of_Strindberg3x4.jpg" alt="Slide av Strindberg">
+                            <div class="carousel-caption">
+                                <p><a href="https://commons.wikimedia.org/wiki/File:Portrait_of_August_Strindberg_by_Richard_Bergh_1905.jpg">Portrait of August Strindberg</a> av Richard Bergh / <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.sv">CC-0</a></p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="Portrait_of_Strindberg3x4.jpg" alt="Slide av Strindberg">
+                            <div class="carousel-caption">
+                                <p><a href="https://commons.wikimedia.org/wiki/File:Portrait_of_August_Strindberg_by_Richard_Bergh_1905.jpg">Portrait of August Strindberg</a> av Richard Bergh / <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.sv">CC-0</a></p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="Portrait_of_Strindberg3x4.jpg" alt="Slide av Strindberg">
+                            <div class="carousel-caption">
+                                <p><a href="https://commons.wikimedia.org/wiki/File:Portrait_of_August_Strindberg_by_Richard_Bergh_1905.jpg">Portrait of August Strindberg</a> av Richard Bergh / <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.sv">CC-0</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    Strindberg tog studentexamen vid privatläroverket Stockholms lyceum 1867. Efter
+                    avslutad skolgång började han på Uppsala universitet men slutade efter bara en
+                    halv termin eftersom han vantrivdes och hade ont om pengar. Därefter försörjde
+                    han sig en tid som folkskollärare och därefter informator samtidigt som han
+                    studerade till läkare. Han försökte sig därefter på att bli skådespelare och
+                    blev statist vid Dramatiska teatern, men bestämde sig 1870 för att återvända
+                    till Uppsala. Det var under studietiden där som Strindberg påbörjade sitt
+                    författarskap.
+
+                    <br><br>Texten är hämtad från Wikipedia CC BY-SA 3.0
+                </p>
+            </div>
+            <div id="page2" class="page">
+                <h1>Betygsätt Strindberg</h1>
+                <p>Sidan är under uppbyggnad!</p>
+            </div>
+            <div id="page3" class="page">
+                <h1>Galleri</h1>
+                <div class="row">
+                    <div class="col-sm-6 col-md-4 col-lg-12">
+                        <figure class="figure">
+                            <img src="Portrait_of_Strindberg.jpg" class="figure-img img-fluid" alt="Porträtt av August Strindberg">
+                            <figcaption class="figure-caption"><a href="https://commons.wikimedia.org/wiki/File:Portrait_of_August_Strindberg_by_Richard_Bergh_1905.jpg">Portrait of August Strindberg</a> av Richard Bergh / <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.sv">CC-0</a></figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-12">
+                        <figure class="figure">
+                            <img src="Portrait_of_Strindberg.jpg" class="figure-img img-fluid" alt="Porträtt av August Strindberg">
+                            <figcaption class="figure-caption"><a href="https://commons.wikimedia.org/wiki/File:Portrait_of_August_Strindberg_by_Richard_Bergh_1905.jpg">Portrait of August Strindberg</a> av Richard Bergh / <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.sv">CC-0</a></figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-12">
+                        <figure class="figure">
+                            <img src="Portrait_of_Strindberg.jpg" class="figure-img img-fluid" alt="Porträtt av August Strindberg">
+                            <figcaption class="figure-caption"><a href="https://commons.wikimedia.org/wiki/File:Portrait_of_August_Strindberg_by_Richard_Bergh_1905.jpg">Portrait of August Strindberg</a> av Richard Bergh / <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.sv">CC-0</a></figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-12">
+                        <figure class="figure">
+                            <img src="Portrait_of_Strindberg.jpg" class="figure-img img-fluid" alt="Porträtt av August Strindberg">
+                            <figcaption class="figure-caption"><a href="https://commons.wikimedia.org/wiki/File:Portrait_of_August_Strindberg_by_Richard_Bergh_1905.jpg">Portrait of August Strindberg</a> av Richard Bergh / <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.sv">CC-0</a></figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-12">
+                        <figure class="figure">
+                            <img src="Portrait_of_Strindberg.jpg" class="figure-img img-fluid" alt="Porträtt av August Strindberg">
+                            <figcaption class="figure-caption"><a href="https://commons.wikimedia.org/wiki/File:Portrait_of_August_Strindberg_by_Richard_Bergh_1905.jpg">Portrait of August Strindberg</a> av Richard Bergh / <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.sv">CC-0</a></figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-12">
+                        <figure class="figure">
+                            <img src="Portrait_of_Strindberg.jpg" class="figure-img img-fluid" alt="Porträtt av August Strindberg">
+                            <figcaption class="figure-caption"><a href="https://commons.wikimedia.org/wiki/File:Portrait_of_August_Strindberg_by_Richard_Bergh_1905.jpg">Portrait of August Strindberg</a> av Richard Bergh / <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.sv">CC-0</a></figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-12">
+                        <figure class="figure">
+                            <img src="Portrait_of_Strindberg.jpg" class="figure-img img-fluid" alt="Porträtt av August Strindberg">
+                            <figcaption class="figure-caption"><a href="https://commons.wikimedia.org/wiki/File:Portrait_of_August_Strindberg_by_Richard_Bergh_1905.jpg">Portrait of August Strindberg</a> av Richard Bergh / <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.sv">CC-0</a></figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-12">
+                        <figure class="figure">
+                            <img src="Portrait_of_Strindberg.jpg" class="figure-img img-fluid" alt="Porträtt av August Strindberg">
+                            <figcaption class="figure-caption"><a href="https://commons.wikimedia.org/wiki/File:Portrait_of_August_Strindberg_by_Richard_Bergh_1905.jpg">Portrait of August Strindberg</a> av Richard Bergh / <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.sv">CC-0</a></figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-12">
+                        <figure class="figure">
+                            <img src="Portrait_of_Strindberg.jpg" class="figure-img img-fluid" alt="Porträtt av August Strindberg">
+                            <figcaption class="figure-caption"><a href="https://commons.wikimedia.org/wiki/File:Portrait_of_August_Strindberg_by_Richard_Bergh_1905.jpg">Portrait of August Strindberg</a> av Richard Bergh / <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.sv">CC-0</a></figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <div id="page4" class="page">
+                <h1>"Mäster Olof"</h1>
+                <p>Sidan är under uppbyggnad!</p>
+            </div>
+            <div id="page5" class="page">
+                <h1>"Hemsöborna. Skärkarlsliv"</h1>
+                <p>Sidan är under uppbyggnad!</p>
+            </div>
+            <div id="page6" class="page">
+                <h1>"Tjänstekvinnans son"</h1>
+                <p>Sidan är under uppbyggnad!</p>
+            </div>
+            <div id="page7" class="page">
+                <h1>"En dåres försvarstal"</h1>
+                <p>Sidan är under uppbyggnad!</p>
+            </div>
+            <div id="page8" class="page">
+                <h1>"Röda rummet"</h1>
+                <p id="firstChapter">
+                    FÖRSTA KAPITLET.
+
+                    <br><br>Stockholm i fågelperspektiv.
+
+                    <br><br>Det var en afton i början av maj. Den lilla
+                    trädgården på Mosebacke hade ännu icke blivit öppnad för
+                    allmänheten, och rabatterna voro ej uppgrävda;
+                    snödropparna hade arbetat sig upp genom fjolårets
+                    lövsamlingar och höllo just på att sluta sin korta
+                    verksamhet för att lämna plats åt de ömtåligare
+                    saffransblommorna, vilka tagit skydd under ett ofruktsamt
+                    päronträd; syrenerna väntade på sydlig vind för att
+                    få gå i blom, men lindarna bjödo ännu kärleksfilter
+                    i sina obrustna knoppar åt bofinkarna, som börjat
+                    bygga sina lavklädda bon mellan stam och gren;
+                    ännu hade ingen mänskofot trampat sandgångarna
+                    sedan sista vinterns snö gått bort, och därför levdes
+                    ett obesvärat liv därinne av både djur och blommor.
+                    Gråsparvarna höllo på att samla upp skräp, som de
+                    sedan gömde under takpannorna på navigationsskolans
+                    hus; de drogos om spillror av rakethylsor från
+                    sista höstfyrverkeriet, de plockade halmen från unga
+                    träd som året förut sluppit ur skolan på Rosendal
+                    – och allting sågo de! De hittade barège-lappar i
+                    bersåer och kunde mellan stickorna på en bänkfot
+                    draga fram hårtappar efter hundar, som icke slagits
+                    där sedan Josefinadagen i fjol. Där var ett liv och
+                    ett kiv.
+
+                    <br><br>Men solen stod över Liljeholmen och sköt hela
+                    kvastar av strålar mot öster; de gingo genom rökarna
+                    från Bergsund, de ilade fram över Riddarfjärden,
+                    klättrade upp till korset på Riddarholmskyrkan,
+                    kastade sig över till Tyskans branta tak, lekte med
+                    vimplarna på skeppsbrobåtarna, illuminerade i
+                    fönstren på stora Sjötullen, eklärerade Lidingöskogarna
+                    och tonade bort i ett rosenfärgat moln, långt, långt
+                    ut i fjärran, där havet ligger. Och därifrån kom
+                    vinden, och hon gjorde samma färd tillbaka genom
+                    Vaxholm, förbi fästningen, förbi Sjötullen, utmed
+                    Siklaön, gick in bakom Hästholmen och tittade på
+                    sommarnöjena; ut igen, fortsatte och kom in i
+                    Danviken, blev skrämd och rusade av utmed södra
+                    stranden, kände lukten av kol, tjära och trän, törnade
+                    mot Stadsgården, for uppför Mosebacke, in i
+                    trädgården och slog emot en vägg. I detsamma
+                    öppnades väggen av en piga, som just rivit bort
+                    klistringen på innanfönstren; ett förfärligt os av
+                    stekflott, ölskvättar, granris och sågspån störtade ut och
+                    fördes långt bort av vinden, som nu, medan köksan
+                    drog in den friska luften genom näsan, passade på
+                    att gripa fönstervadden, som var beströdd med
+                    paljetter och berberisbär och törnrosblad, och började
+                    en ringdans utefter gångarna, i vilken snart
+                    gråsparvarna och bofinkarna deltogo, då de sålunda sågo
+                    sina bosättningsbekymmer till stor del undanröjda.
+
+                    <br><br>Emellertid fortsatte köksan sitt arbete med
+                    innanfönstren, och inom några minuter hade dörren från
+                    källarsalen till verandan blivit öppnad och ut i
+                    trädgården trädde en ung herre, enkelt men fint klädd.
+                    <br>…
+                </p>
+                <p>Text skriven av August Strindberg och heter "Stockholm i fågelperspektiv".</p>
+            </div>
+            <div id="page9" class="page">
+                <h1>Om StrindbergAppen</h1>
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Skapare</h3>
+                        <p>Skaparen av StrindbergAppen är Jacob Hafdell genom Bootstrap.</p>
+                        <h3>Licenser</h3>
+                        <h5>Texter</h5>
+                        <p>Texten på startsidan om Strindberg är hämtad från Wikipedia CC BY-SA 3.0. <br><br>Texten på sidan "Röda rummet" är skriven av August Strindberg och heter "Stockholm i fågelperspektiv".</p>
+                        <h5>Bilder</h5>
+                        <p>Bilder på August Strindberg kommer från <a href="https://commons.wikimedia.org/wiki/File:Portrait_of_August_Strindberg_by_Richard_Bergh_1905.jpg">Portrait of August Strindberg</a> av Richard Bergh / <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.sv">CC-0</a></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Har du en fråga?</h3>
+                        <div class="form-group">
+                            <label for="mejlAdress">Mejladress</label>
+                            <input type="email" class="form-control" id="mejlAdress" placeholder="namn@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="textArea">Fråga</label>
+                            <textarea class="form-control" id="textArea" rows="3"></textarea>
+                            <br>
+                            <button type="button" class="btn btn-primary">Skicka</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
